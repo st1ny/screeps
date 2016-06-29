@@ -1,0 +1,1 @@
+Memory.rooms['sim'].creeps[Game.getObjectById('723c830c90e44c92581e2bdb').createCreep([WORK, WORK, CARRY, MOVE], undefined, {role: 'miner'})] = {};
