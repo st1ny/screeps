@@ -4,14 +4,10 @@ var roleBuilder = {
         if (creep.memory.building && creep.carry.energy == 0) {
             creep.memory.building = false;
         }
-
-        if (creep.memory.building == false && creep.carry.energy == creep.carryCapacity) {
-            creep.memory.building = true;
-            creep.memory.source = -1;
-        }
-
-        if (creep.memory.upgrading == false && creep.memory.source == -1) {
-            creep.memory.upgrading = true;
+        else {
+            if (creep.carry.energy == creep.carryCapacity) {
+                creep.memory.building = true;
+            }
         }
 
         if (creep.memory.building == true) {
@@ -21,7 +17,6 @@ var roleBuilder = {
                     creep.moveTo(targets);
                 }
             }
-
         }
         else {
             var source = creep.room.find(FIND_SOURCES);
