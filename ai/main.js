@@ -23,8 +23,14 @@ module.exports.loop = function () {
     }
 
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-    if (upgraders.length < 10) {
+    if (upgraders.length < 4) {
         Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'upgrader'});
+    }
+    
+    if(upgraders > builders)
+    {
+        var myUpgraders = Game.creeps.find(FIND_MY_CREEPS, {filter : (creep) => creep.role = 'upgrader'});
+        myUpgraders[0].role = 'builder';
     }
 
     for (var c in Game.creeps) {
