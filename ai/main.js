@@ -1,6 +1,7 @@
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
+var roleRepaiere = require('role.repairer');
 
 module.exports.loop = function () {
 
@@ -25,6 +26,10 @@ module.exports.loop = function () {
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
     if (upgraders.length < 4) {
         Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'upgrader'});
+    }
+    var repairers = _.filter(Game.creeps, (creep) => creep.memory.role == 'repairer');
+    if (upgraders.length < 4) {
+        Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'repairer', isRepairing:false});
     }
     
     if(upgraders.length > builders.length)
