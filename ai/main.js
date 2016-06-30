@@ -12,7 +12,7 @@ module.exports.loop = function () {
         }
     }
 
-    var harvesters = _.filter(Game.creeps, (creep) = > creep.memory.role == 'harvester'
+    var harvesters = _.filter(Game.creeps, (creep)=>creep.memory.role == 'harvester'
     )
     // console.log('Harvesters: ' + harvesters.length);
 
@@ -21,7 +21,7 @@ module.exports.loop = function () {
         // console.log('Spawning new harvester: ' + newName);
     }
 
-    var upgraders = _.filter(Game.creeps, (creep) = > creep.memory.role == 'upgrader'
+    var upgraders = _.filter(Game.creeps, (creep)=>creep.memory.role == 'upgrader'
     )
     // console.log('Updaters: ' + updaters.length);
 
