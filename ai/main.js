@@ -16,8 +16,13 @@ module.exports.loop = function () {
         Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'harvester'});
     }
 
+    var builders = _.filter(Game.creeps, (creep) => creep.memory.role == 'builder');
+    if (builders.length < 4) {
+        Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'builder'});
+    }
+
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-    if (upgraders.length < 4) {
+    if (upgraders.length < 6) {
         Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'upgrader'});
     }
 
@@ -31,4 +36,3 @@ module.exports.loop = function () {
         }
     }
 };
-
