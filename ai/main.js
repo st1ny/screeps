@@ -27,10 +27,9 @@ module.exports.loop = function () {
         Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'upgrader'});
     }
     
-    if(upgraders > builders)
+    if(upgraders.length > builders.length)
     {
-        var myUpgraders = Game.creeps.find(FIND_MY_CREEPS, {filter : (creep) => creep.memory.role = 'upgrader'});
-        myUpgraders[0].memory.role = 'builder';
+        upgraders[0].memory.role = 'builder';
     }
 
     for (var c in Game.creeps) {
