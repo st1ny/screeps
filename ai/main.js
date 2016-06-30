@@ -29,8 +29,8 @@ module.exports.loop = function () {
     
     if(upgraders > builders)
     {
-        var myUpgraders = Game.creeps.find(FIND_MY_CREEPS, {filter : (creep) => creep.role = 'upgrader'});
-        myUpgraders[0].role = 'builder';
+        var myUpgraders = Game.creeps.find(FIND_MY_CREEPS, {filter : (creep) => creep.memory.role = 'upgrader'});
+        myUpgraders[0].memory.role = 'builder';
     }
 
     for (var c in Game.creeps) {
