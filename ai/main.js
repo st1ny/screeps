@@ -23,7 +23,7 @@ module.exports.loop = function () {
     }
 
     var upgraders = _.filter(Game.creeps, (creep) => creep.memory.role == 'upgrader');
-    if (upgraders.length < 10) {
+    if (upgraders.length < 6) {
         Game.spawns.Spawn1.createCreep([WORK, CARRY, MOVE], undefined, {role: 'upgrader'});
     }
 
